@@ -131,9 +131,12 @@ class GameManagerSingleton {
 
   chargeHack(basePoints) {
     if (this.state.hackActive) return;
+    const hackBoostLevel = this.state.permanentUpgrades?.hackBoost || 0;
+    const chargeMultiplier = 1 + (hackBoostLevel * 0.2);
+    const chargePerScore = HACK_CONFIG.CHARGE_PER_SCORE * chargeMultiplier;
     this.state.hackCharge = Math.min(
       HACK_CONFIG.MAX_CHARGE,
-      this.state.hackCharge + HACK_CONFIG.CHARGE_PER_SCORE
+      this.state.hackCharge + chargePerScore
     );
   }
 
