@@ -9,8 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "make-icon": "node scripts/make-icon.cjs",
-    "pack-win": "npm run build && electron-builder --win portable",
-    "pack-mac": "npm run build && electron-builder --mac zip --x64 --arm64"
+    "pack-win": "npm run build && electron-builder --win portable --publish never",
+    "pack-mac": "npm run build && electron-builder --mac zip --x64 --arm64 --publish never"
   },
   "build": {
     "appId": "com.atariportal.game",
@@ -38,7 +38,8 @@
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     },
     "mac": {
-      "identity": null,
+      "icon": "public/assets/icon.icns",
+      "identity": "-",
       "target": [
         {
           "target": "zip",
