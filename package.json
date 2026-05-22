@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "make-icon": "node scripts/make-icon.cjs",
-    "pack-win": "npm run build && electron-builder --win portable --publish never",
+    "pack-win": "npm run build && electron-builder --win zip --publish never",
     "pack-mac": "npm run build && electron-builder --mac zip --x64 --arm64 --publish never"
   },
   "build": {
@@ -29,13 +29,13 @@
       "signAndEditExecutable": false,
       "target": [
         {
-          "target": "portable",
+          "target": "zip",
           "arch": [
             "x64"
           ]
         }
       ],
-      "artifactName": "${productName}-${version}-${arch}.${ext}"
+      "artifactName": "${productName}-${version}-win-${arch}.${ext}"
     },
     "mac": {
       "icon": "public/assets/icon.icns",

@@ -25,7 +25,7 @@ jobs:
             os: windows-latest
             pack_script: pack-win
             artifact_name: atari-portal-windows
-            artifact_path: release/*.exe
+            artifact_path: release/*-win-x64.zip
           - platform: macos
             os: macos-latest
             pack_script: pack-mac
