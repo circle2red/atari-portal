@@ -674,7 +674,7 @@ const ThreeSceneOverlay = {
 
   _loadArms() {
     const loader = new GLTFLoader();
-    loader.load('assets/robotic_arm.glb', (gltf) => {
+    loader.load('assets/robotic_arm_lite.glb', (gltf) => {
       const armModel = gltf.scene;
       armModel.scale.setScalar(ARM_SCALE);
 
